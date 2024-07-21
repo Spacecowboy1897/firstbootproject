@@ -1,9 +1,10 @@
 package com.johndoe83.firstbootproject.dao;
 
 
-import com.johndoe83.firstbootproject.models.User;
+import com.johndoe83.firstbootproject.model.User;
 
 import java.util.List;
+
 
 public interface UserDAO {
 

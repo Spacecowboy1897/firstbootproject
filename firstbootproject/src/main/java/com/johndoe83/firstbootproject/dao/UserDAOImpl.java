@@ -1,6 +1,7 @@
 package com.johndoe83.firstbootproject.dao;
 
-import com.johndoe83.firstbootproject.models.User;
+import com.johndoe83.firstbootproject.model.User;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;

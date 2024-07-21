@@ -1,6 +1,6 @@
-package com.johndoe83.firstbootproject.controllers;
+package com.johndoe83.firstbootproject.controller;
 
-import com.johndoe83.firstbootproject.models.User;
+import com.johndoe83.firstbootproject.model.User;
 import com.johndoe83.firstbootproject.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
