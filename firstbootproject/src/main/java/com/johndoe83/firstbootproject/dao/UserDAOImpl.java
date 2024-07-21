@@ -1,7 +1,6 @@
 package com.johndoe83.firstbootproject.dao;
 
 import com.johndoe83.firstbootproject.model.User;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -13,7 +12,7 @@ import java.util.List;
 public class UserDAOImpl implements UserDAO {
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public List<User> index() {
