@@ -2,6 +2,7 @@ package com.johndoe83.firstbootproject.dao;
 
 import com.johndoe83.firstbootproject.model.User;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
@@ -21,7 +22,11 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User show(Long id) {
-        return entityManager.find(User.class, id);
+        if (id == null) {
+            throw new EntityNotFoundException();
+        } else {
+            return entityManager.find(User.class, id);
+        }
     }
 
     @Override
@@ -31,11 +36,19 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void update(Long id, User updatedUser) {
-        entityManager.merge(updatedUser);
+        if (id == null) {
+            throw new EntityNotFoundException();
+        } else {
+            entityManager.merge(updatedUser);
+        }
     }
 
     @Override
     public void delete(Long id) {
-        entityManager.remove(entityManager.find(User.class, id));
+        if (id == null) {
+            throw new EntityNotFoundException();
+        } else {
+            entityManager.remove(entityManager.find(User.class, id));
+        }
     }
 }
